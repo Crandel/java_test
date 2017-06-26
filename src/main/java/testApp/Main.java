@@ -8,6 +8,7 @@ public class Main {
         out.println( "Lets begin our test app!!!" );
         Basics basic = new Basics();
         basic.run();
+        Basics basic2 = new Basics("Another name");
 
     }
 }
