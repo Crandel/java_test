@@ -1,10 +1,17 @@
 package testApp;
 
-import static java.lang.System.*;
-
 public class Basics {
   public static void run() {
-    int i = 5;
-    out.println(i);
+    vars();
+  }
+
+  public static void vars() {
+    int x = 5;
+    int y = 6;
+    System.out.println(6/x + 5*y);
+    int z = x;
+    System.out.println(z);
+    z = 13;
+    System.out.format("x is %d and z is %d", x, z);
   }
 }
