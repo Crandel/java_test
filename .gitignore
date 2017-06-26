@@ -1,0 +1,11 @@
+*.class
+project/
+target/
+files/*
+/.idea
+/.idea_modules
+/.classpath
+/.project
+/.settings
+/RUNNING_PID
+.ensime*
