@@ -6,6 +6,7 @@ public class Main {
     public static void main( String[] args )
     {
         out.println( "Lets begin our test app!!!" );
-        Basics.run();
+        Basics basic = new Basics();
+        basic.run();
     }
 }

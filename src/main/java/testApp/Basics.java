@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Basics {
   static int x = 3;
-  static String name = "Def name";
-  static String username = "";
+  private String name = "Def name";
+  private String username = "";
   // static means this number is shared by all objects of type Animal
   // final means that this value can't be changed
   public static final double FAVNUMBER = 1.6180;
@@ -14,28 +14,36 @@ public class Basics {
 
   // init
   static {
-    x = 5;
+    x++;
   }
 
   // First constructor
   public Basics() {
     // Fill second constructor with Default value
     this("Default name");
-    name = "Default name";
+    this.name = "Default name";
     System.out.println("Constructor without args");
   }
 
   public Basics(String classname) {
-    name = classname;
+    this.name = classname;
     System.out.format("One arg constructor with name: %s\n", name);
   }
 
-  public static void run() {
+  public String getUsername(){
+    return username;
+  }
+
+  public void setUsername(String username) {
+    this.username = username;
+  }
+
+  public void run() {
     input();
     vars();
   }
 
-  public static void vars() {
+  private void vars() {
 
     System.out.println(x);
     int y = 6;
@@ -44,10 +52,10 @@ public class Basics {
     System.out.println(z);
     z = 13;
     System.out.format("x is %d and z is %d\n", x, z);
-    System.out.format("Class %s from user %s\n", name, username);
+    System.out.format("Class %s from user %s\n", this.name, this.username);
   }
 
-  public static void input() {
+  private void input() {
     System.out.println("Please enter your real name");
     username = userInput.nextLine();
   }
