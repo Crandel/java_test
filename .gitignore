@@ -4,6 +4,7 @@ target/
 files/*
 /.idea
 /.idea_modules
+.meghanada/
 /.classpath
 /.project
 /.settings

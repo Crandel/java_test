@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Basics {
   static int x;
-  static String name;
+  static String name = "Def name";
   static String username;
 
   static {
