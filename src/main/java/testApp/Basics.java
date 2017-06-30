@@ -30,7 +30,7 @@ public class Basics {
     System.out.format("One arg constructor with name: %s\n", name);
   }
 
-  public String getUsername(){
+  public String getUsername() {
     return username;
   }
 
@@ -47,7 +47,7 @@ public class Basics {
 
     System.out.println(x);
     int y = 6;
-    System.out.println(6/x + 5*y);
+    System.out.println(6 / x + 5 * y);
     int z = x;
     System.out.println(z);
     z = 13;
