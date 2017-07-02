@@ -78,7 +78,8 @@ public class Basics {
     System.out.println(z);
     z = 13;
     System.out.format("x is %d and z is %d\n", x, z);
-    System.out.format("Class %s from user %s\n", this.getName(), this.getUsername());
+    double castDouble = (double) z;
+    System.out.format("Class %s from user %s\n and castDouble is %3.4f \n", this.getName(), this.getUsername(), castDouble);
   }
 
   private void input() {
