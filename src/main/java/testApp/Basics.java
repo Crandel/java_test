@@ -80,8 +80,9 @@ public class Basics {
     System.out.format("x is %d and z is %d\n", x, z);
     double castDouble = (double) z;
     String castString = Double.toString(castDouble);
+    double parDou = Double.parseDouble(castString);
     System.out.format("Class %s from user %s\nand castDouble is %3.4f and castString is %s\n",
-                      this.getName(), this.getUsername(), castDouble, castString);
+                      this.getName(), this.getUsername(), parDou, castString);
   }
 
   private void input() {
