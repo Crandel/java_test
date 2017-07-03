@@ -79,7 +79,9 @@ public class Basics {
     z = 13;
     System.out.format("x is %d and z is %d\n", x, z);
     double castDouble = (double) z;
-    System.out.format("Class %s from user %s\n and castDouble is %3.4f \n", this.getName(), this.getUsername(), castDouble);
+    String castString = Double.toString(castDouble);
+    System.out.format("Class %s from user %s\nand castDouble is %3.4f and castString is %s\n",
+                      this.getName(), this.getUsername(), castDouble, castString);
   }
 
   private void input() {
