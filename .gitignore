@@ -10,3 +10,4 @@ files/*
 /.settings
 /RUNNING_PID
 .ensime*
+dependency-reduced-pom.xml
