@@ -9,9 +9,17 @@ public class ClassesExample {
     private static final double xyz = 54.05;
 
     public Root() {
-      System.out.println("Start first constructor in Root");
-      this.x = 42;
-      System.out.println("Finish first constructor in Root");
+      this(42);
+      System.out.println("Empty constructor in Root");
+    }
+
+    public Root(int x){
+      this.x = x;
+    }
+
+    public Root(int x, int z){
+      this.x = x;
+      this.z = z;
     }
 
     public int getX(){
@@ -32,6 +40,20 @@ public class ClassesExample {
   }
 
   public class Child extends Root {
+    public Child(){
+      this(33);
+      System.out.println("Empty constructor in Child class");
+    }
+
+    public Child(int x){
+      this.setX(x);
+      System.out.println("One parameter Child constructor");
+    }
+
+    public Child(int x, int z){
+      super(x, z);
+    }
+
     public void prn(){
       System.out.println(getZ());
     }
