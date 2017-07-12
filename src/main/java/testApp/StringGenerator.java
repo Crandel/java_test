@@ -1,7 +1,9 @@
 package testApp;
 
 import java.util.concurrent.ThreadLocalRandom;
+import java.nio.file.*;
 import java.util.*;
+import java.util.stream.*;
 
 public class StringGenerator {
 
@@ -12,16 +14,18 @@ public class StringGenerator {
     this("src/resources/lorem.txt");
   }
 
+  public void setNewLine(String line){
+    this.lines.add(line);
+  }
+
   public StringGenerator(String path) throws java.io.IOException {
     this.filePath = path;
-    Scanner sc = new Scanner(new java.io.File(filePath));
-    while (sc.hasNextLine()) {
-      String row = sc.nextLine();
-      String[] rowsArray = row.split("\\s+");
-      for (int i = 0; i < rowsArray.length; i++) {
-        lines.add(rowsArray[i].replaceAll("[^a-zA-Z0-9]", ""));
-      }
-    }
+    Stream<String> stream = Files.lines(Paths.get(filePath));
+    lines = stream
+      .map(s -> s.split("\\s+"))
+      .flatMap(Arrays::stream)
+      .map(a -> a.replaceAll("[^a-zA-Z0-9]", ""))
+      .collect(Collectors.toList());
   }
 
   public String generate() {

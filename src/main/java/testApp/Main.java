@@ -29,7 +29,7 @@ public class Main {
     }
     */
 
-    /*
+    
     // StringGenerator test
 
     try {
@@ -40,8 +40,9 @@ public class Main {
     } catch (java.io.IOException e) {
     System.out.println(e);
     }
-    */
+    
 
+    /*
     // ClassesExample test
 
     ClassesExample clasex = new ClassesExample();
@@ -54,5 +55,6 @@ public class Main {
     emptyChild.prn();
     firstChild.prn();
     secondChild.prn();
+    */
   }
 }
