@@ -14,22 +14,23 @@ public class StringGenerator {
     this("src/resources/lorem.txt");
   }
 
-  public void setNewLine(String line){
+  public void setNewLine(String line) {
     this.lines.add(line);
   }
 
   public StringGenerator(String path) throws java.io.IOException {
     this.filePath = path;
     Stream<String> stream = Files.lines(Paths.get(filePath));
-    lines = stream
-      .map(s -> s.split("\\s+"))
-      .flatMap(Arrays::stream)
-      .map(a -> a.replaceAll("[^a-zA-Z0-9]", ""))
-      .collect(Collectors.toList());
+    lines =
+        stream
+            .map(s -> s.split("\\s+"))
+            .flatMap(Arrays::stream)
+            .map(a -> a.replaceAll("[^a-zA-Z0-9]", ""))
+            .collect(Collectors.toList());
   }
 
   public String generate() {
     int random = ThreadLocalRandom.current().nextInt(0, lines.size());
-    return lines.get(random);
+    return (random > 25) ? lines.get(random) : null;
   }
 }

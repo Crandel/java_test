@@ -4,9 +4,8 @@ import static java.lang.System.*;
 import testApp.ClassesExample.Child;
 
 public class Main {
-  public static void main( String[] args )
-  {
-    out.println( "Lets begin our test app!!!" );
+  public static void main(String[] args) {
+    out.println("Lets begin our test app!!!");
     /*
 
     // Basic test
@@ -29,18 +28,39 @@ public class Main {
     }
     */
 
-    
     // StringGenerator test
 
     try {
-    StringGenerator sgen = new StringGenerator();
-    for (int j = 0; j < 100; j++){
-    System.out.println(String.format("%d -> %s", j, sgen.generate()));
-    }
+      StringGenerator sgen = new StringGenerator();
+      for (int j = 0; j < 100; j++) {
+        String res = sgen.generate();
+        if (res != null) {
+          switch (res.length()) {
+            case 5:
+              System.out.println(String.format("%d -> %s 5 length", j, res));
+              break;
+            case 4:
+              System.out.println(String.format("%d -> %s 4 length", j, res));
+              break;
+            case 3:
+              System.out.println(String.format("%d -> %s 3 length", j, res));
+              break;
+            case 2:
+              System.out.println(String.format("%d -> %s 2 length", j, res));
+              break;
+            case 1:
+              System.out.println(String.format("%d -> %s 1 length", j, res));
+              break;
+            default:
+              System.out.println(String.format("%d -> %s greater 5 length", j, res));
+          }
+        } else {
+          System.out.println("Get null");
+        }
+      }
     } catch (java.io.IOException e) {
-    System.out.println(e);
+      System.out.println(e);
     }
-    
 
     /*
     // ClassesExample test
