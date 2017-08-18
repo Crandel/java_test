@@ -65,6 +65,9 @@ public class Basics {
   }
 
   public void run() {
+    System.out.println(0.0/0.0);
+    System.out.println(0.0/10);
+
     // input();
     // vars();
     triangle();
